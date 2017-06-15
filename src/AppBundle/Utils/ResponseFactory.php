@@ -26,4 +26,17 @@ class ResponseFactory
                 'error' => $content,
             ]);
     }
+
+    public static function createWebServiceResponse($success, $content)
+    {
+        return $success ?
+            [
+                'success' => true,
+                'content' => $content,
+            ] :
+            [
+                'success' => false,
+                'error' => $content,
+            ];
+    }
 }

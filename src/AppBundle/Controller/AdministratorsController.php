@@ -10,12 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class AccountController extends Controller
+class AdministratorsController extends Controller
 {
     /**
-     * @Route("/account", name="account")
+     * @Route("/administrators", name="account")
      */
-    public function accountAction()
+    public function administratorsAction()
     {
         return $this->render('account.html.twig');
     }
@@ -24,7 +24,7 @@ class AccountController extends Controller
      * @Route("/administrators/{id}", name="edit_account")
      * @Method("PATCH")
      */
-    public function deleteStudentAction(Request $request, $id)
+    public function editAccountAction(Request $request, $id)
     {
         $administratorFacade = new AdministratorFacade($this->getDoctrine()->getManager());
         $administrator = $administratorFacade->find($id);

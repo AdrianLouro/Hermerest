@@ -18,7 +18,7 @@
 
 .treeviewSecondLevel li {
     /*TODO: conseguir que la ruta sea relativa*/
-    background: url(http://localhost:8000/Hermerest/web/images/treeview-default-line.gif) 0 0 no-repeat;
+    background: url(../images/treeview-default-line.gif) 0 0 no-repeat;
 }
 
 /*.treeview > li:first-child > label {*/
@@ -51,7 +51,8 @@
 .treeview li > label /*, .treeview li > div > label*/
 {
     /*TODO: conseguir que la ruta sea relativa*/
-    background: url(http://localhost:8000/Hermerest/web/images/gr_custom-inputs.png) 0 -1px no-repeat;
+    /*background: url(http://localhost:8000/Hermerest/web/images/gr_custom-inputs.png) 0 -1px no-repeat;*/
+    background: url(../images/gr_custom-inputs.png) 0 -1px no-repeat;
     /* move left to cover the original checkbox area */
     margin-left: -20px;
     /* pad the text to make room for image */

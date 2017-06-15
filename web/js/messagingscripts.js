@@ -22,7 +22,7 @@ function openViewCircularDialogCallback(response) {
     $("#viewCircularModalSendingDate").text(dateToString(response.content.sendingDate.date));
     $("#viewCircularModal .messageTextArea").text(response.content.message);
     $("#viewCircularModal #attachedFiles").html(response.content.attachmentId === null ? "No hay archivos adjuntos" :
-        "<a href='http://localhost:8000/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
+        "<a href='http://" + window.location.host + "/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
         response.content.attachmentName +
         "</a>");
 
@@ -119,7 +119,7 @@ function openViewAuthorizationDialogCallback(response) {
     $("#viewAuthorizationModalLimitDate").text(dateToString(response.content.limitDate.date));
     $("#viewAuthorizationModal .messageTextArea").text(response.content.message);
     $("#viewAuthorizationModal #attachedFiles").html(response.content.attachmentId === null ? "No hay archivos adjuntos" :
-        "<a href='http://localhost:8000/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
+        "<a href='http://" + window.location.host + "/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
         response.content.attachmentName +
         "</a>");
 
@@ -235,7 +235,7 @@ function openViewPollDialogCallback(response) {
     $("#viewPollModalLimitDate").text(dateToString(response.content.limitDate.date));
     $("#viewPollModal .messageTextArea").text(response.content.message);
     $("#viewPollModal #attachedFiles").html(response.content.attachmentId === null ? "No hay archivos adjuntos" :
-        "<a href='http://localhost:8000/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
+        "<a href='http://" + window.location.host + "/Hermerest_attachments/" + response.content.attachmentId + "' download='" + response.content.attachmentName + "'>" +
         response.content.attachmentName +
         "</a>");
 

@@ -76,7 +76,6 @@ function deleteCall(url, postData, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            // $("#divError").text("Error al realizar la petición");
             alert("Error al realizar la petición");
         }
 
