@@ -215,4 +215,27 @@ class Progenitor
     {
         return $this->pollReplies;
     }
+
+    /**
+     * Get messages by type
+     *
+     * @param $type
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessagesOfType($type)
+    {
+        $messages = new ArrayCollection();
+        foreach ($this->children as $child)
+            $this->addChildMessagesToChildrenMessages($child->getMessagesOfType($type), $messages, $type);
+
+        return $messages;
+    }
+
+    private function addChildMessagesToChildrenMessages($childMessages, $childrenMessages, $type)
+    {
+        foreach ($childMessages as $childMessage) {
+            if ($type != "Authorization" && $childrenMessages->contains($childMessage)) continue;
+            $childrenMessages->add($childMessage);
+        }
+    }
 }

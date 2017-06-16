@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e06172-8bc6-487a-88c6-fe9d6006e63d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdministratorsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/treeview_styles.css" afterPath="$PROJECT_DIR$/web/css/treeview_styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/ajaxscripts.js" afterPath="$PROJECT_DIR$/web/js/ajaxscripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Student.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Student.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/messagingscripts.js" afterPath="$PROJECT_DIR$/web/js/messagingscripts.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,31 +22,31 @@
     <splitter split-orientation="horizontal" split-proportion="0.5278129">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ResponseFactory.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php">
+          <file leaf-file-name="Centre.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Centre.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="40" selection-end-column="5" />
+                <state relative-caret-position="479">
+                  <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="214" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AbstractFacade.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Facade/AbstractFacade.php">
+          <file leaf-file-name="Progenitor.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="44" selection-end-column="5" />
+                <state relative-caret-position="725">
+                  <caret line="236" column="61" lean-forward="true" selection-start-line="236" selection-start-column="61" selection-end-line="236" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AdministratorFacade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Facade/AdministratorFacade.php">
+          <file leaf-file-name="Student.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Student.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                <state relative-caret-position="218">
+                  <caret line="289" column="0" lean-forward="false" selection-start-line="289" selection-start-column="0" selection-end-line="294" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -62,7 +59,7 @@
           <file leaf-file-name="centrescripts.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/js/centrescripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
+                <state relative-caret-position="17">
                   <caret line="254" column="10" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="10" />
                   <folding>
                     <marker date="1496074930403" expanded="true" signature="4746:4753" ph="×" />
@@ -72,22 +69,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="messagingscripts.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="messagingscripts.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/js/messagingscripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="348">
-                  <caret line="237" column="77" lean-forward="false" selection-start-line="237" selection-start-column="77" selection-end-line="237" selection-end-column="77" />
+                <state relative-caret-position="216">
+                  <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
                   <folding>
-                    <marker date="1497563611040" expanded="true" signature="11373:11380" ph="×" />
+                    <marker date="1497619245813" expanded="true" signature="11363:11370" ph="×" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="treeview_styles.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="treeview_styles.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/css/treeview_styles.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="671">
+                <state relative-caret-position="901">
                   <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
                   <folding />
                 </state>
@@ -148,7 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/centre/c</find>
       <find>/centre/clas</find>
       <find>/centre/class</find>
       <find>/centre/classes/</find>
@@ -178,6 +174,7 @@
       <find>default</find>
       <find>default-line</find>
       <find>hermerest_attachments</find>
+      <find>file.name</find>
     </findStrings>
     <replaceStrings>
       <replace>base.html.twig</replace>
@@ -208,7 +205,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/account.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/EntityTODO/AuthorizationReply.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Authorization.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/PollOption.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Facade/AuthorizationReplyFacade.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Facade/PollReplyFacade.php" />
@@ -225,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/centre/student.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/AttachmentManager.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Student.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Response/ResponseFactory.php" />
         <option value="$PROJECT_DIR$/web/js/scripts.js" />
         <option value="$PROJECT_DIR$/web/js/utilscripts.js" />
@@ -255,6 +250,8 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php" />
         <option value="$PROJECT_DIR$/web/css/treeview_styles.css" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Student.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php" />
         <option value="$PROJECT_DIR$/web/js/messagingscripts.js" />
       </list>
     </option>
@@ -478,6 +475,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="messaging" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hermerest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hermerest" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="centre" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -515,6 +538,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hermerest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hermerest" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messaging" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -749,20 +798,22 @@
       <workItem from="1497373679881" duration="2986000" />
       <workItem from="1497527721258" duration="1415000" />
       <workItem from="1497545220076" duration="9654000" />
+      <workItem from="1497566275700" duration="796000" />
+      <workItem from="1497612801503" duration="3001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400653000" />
+    <option name="totallyTimeSpent" value="404450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17604166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3541226" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -774,6 +825,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -815,20 +867,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/messaging/authorizations.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/messaging/polls.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
@@ -995,7 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,14 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
           <caret line="108" column="21" lean-forward="false" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/messaging/AuthorizationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="66" column="97" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -1074,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="63" lean-forward="false" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,7 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,23 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Student.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3111">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,22 +1149,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/treeview_styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/centrescripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="254" column="10" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="10" />
+          <folding>
+            <marker date="1496074930403" expanded="true" signature="4746:4753" ph="×" />
+            <marker date="1496074930403" expanded="true" signature="9670:9677" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/centre/ParentsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="425">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1163,7 +1182,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Facade/AdministratorFacade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1176,32 +1195,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/centrescripts.js">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/ResponseFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="254" column="10" lean-forward="false" selection-start-line="254" selection-start-column="4" selection-end-line="254" selection-end-column="10" />
-          <folding>
-            <marker date="1496074930403" expanded="true" signature="4746:4753" ph="×" />
-            <marker date="1496074930403" expanded="true" signature="9670:9677" ph="×" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/messaging/authorizations.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="289" column="0" lean-forward="false" selection-start-line="289" selection-start-column="0" selection-end-line="294" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Centre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="214" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Progenitor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="236" column="61" lean-forward="true" selection-start-line="236" selection-start-column="61" selection-end-line="236" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/messaging/AuthorizationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="887">
+          <caret line="66" column="97" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="97" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/messagingscripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="237" column="77" lean-forward="false" selection-start-line="237" selection-start-column="77" selection-end-line="237" selection-end-column="77" />
+        <state relative-caret-position="216">
+          <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
           <folding>
-            <marker date="1497563611040" expanded="true" signature="11373:11380" ph="×" />
+            <marker date="1497619245813" expanded="true" signature="11363:11370" ph="×" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/treeview_styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>

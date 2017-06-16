@@ -287,6 +287,25 @@ class Student
         return $this->authorizationReplies;
     }
 
+    /**
+     * Get messages by type
+     *
+     * @param $type
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessagesOfType($type)
+    {
+        $messages = new ArrayCollection();
+        $className = "\\AppBundle\\Entity\\" . $type;
+        $class = get_class(new $className());
+
+        foreach ($this->messages as $message)
+            if ($message instanceof $class)
+                $messages->add($message);
+
+        return $messages;
+    }
+
 
     public function isAuthorizedTo(Authorization $authorization)
     {

@@ -58,7 +58,7 @@ function sendCircular() {
                 sendCircularPost(studentsIds, file.name, event.target.result.replace(/^[^,]*,/, ''));
             };
             reader.readAsDataURL(file);
-        } else sendCircularPost(studentsIds, file.name, "");
+        } else sendCircularPost(studentsIds, null, "");
 
     }
 }
@@ -156,7 +156,7 @@ function sendAuthorization() {
                 sendAuthorizationPost(studentsIds, file.name, event.target.result.replace(/^[^,]*,/, ''));
             };
             reader.readAsDataURL(file);
-        } else sendAuthorizationPost(studentsIds, file.name, "");
+        } else sendAuthorizationPost(studentsIds, null, "");
     }
 }
 
@@ -298,7 +298,7 @@ function sendPoll() {
                 sendPollPost(studentsIds, file.name, event.target.result.replace(/^[^,]*,/, ''));
             };
             reader.readAsDataURL(file);
-        } else sendPollPost(studentsIds, file.name, "");
+        } else sendPollPost(studentsIds, null, "");
     }
 }
 
