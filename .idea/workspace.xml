@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e06172-8bc6-487a-88c6-fe9d6006e63d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/centre/student.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/centre/student.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/modals/add_parent_modal.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/modals/add_parent_modal.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/modals/send_poll_modal.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/modals/send_poll_modal.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/messaging/PollsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/messaging/PollsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/modals_styles.css" afterPath="$PROJECT_DIR$/web/css/modals_styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/treeview_styles.css" afterPath="$PROJECT_DIR$/web/css/treeview_styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/accountscripts.js" afterPath="$PROJECT_DIR$/web/js/accountscripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/ajaxscripts.js" afterPath="$PROJECT_DIR$/web/js/ajaxscripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/centrescripts.js" afterPath="$PROJECT_DIR$/web/js/centrescripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/messagingscripts.js" afterPath="$PROJECT_DIR$/web/js/messagingscripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/utilscripts.js" afterPath="$PROJECT_DIR$/web/js/utilscripts.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,8 +45,8 @@
           <file leaf-file-name="send_poll_modal.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Resources/views/modals/send_poll_modal.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="507">
-                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="17" />
+                <state relative-caret-position="558">
+                  <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -69,7 +56,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="utilscripts.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="utilscripts.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/js/utilscripts.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="85">
@@ -114,11 +101,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ajaxscripts.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ajaxscripts.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/js/ajaxscripts.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+                <state relative-caret-position="986">
+                  <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -246,9 +233,9 @@
         <option value="$PROJECT_DIR$/web/js/utilscripts.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/modals/confirm_modal.html.twig" />
         <option value="$PROJECT_DIR$/web/js/centrescripts.js" />
-        <option value="$PROJECT_DIR$/web/js/ajaxscripts.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/centre/student.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/modals/add_parent_modal.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/ajaxscripts.js" />
       </list>
     </option>
   </component>
@@ -805,12 +792,12 @@
       <workItem from="1497566275700" duration="796000" />
       <workItem from="1497612801503" duration="3616000" />
       <workItem from="1497699856771" duration="942000" />
-      <workItem from="1497960482835" duration="17969000" />
+      <workItem from="1497960482835" duration="18208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="423976000" />
+    <option name="totallyTimeSpent" value="424215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -873,20 +860,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/centre/ClassController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1191,17 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/centrescripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <marker date="1497978767657" expanded="true" signature="5051:5058" ph="×" />
-            <marker date="1497978767657" expanded="true" signature="10087:10094" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1223,28 +1185,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/accountscripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="202" lean-forward="false" selection-start-line="11" selection-start-column="200" selection-end-line="11" selection-end-column="202" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/ajaxscripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/modals/new_class_modal.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
-            <element signature="e#12#34#0#Twig" expanded="true" />
+            <element signature="e#12#34#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1264,7 +1210,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="116" lean-forward="true" selection-start-line="18" selection-start-column="116" selection-end-line="18" selection-end-column="116" />
           <folding>
-            <element signature="e#12#34#0#Twig" expanded="true" />
+            <element signature="e#12#34#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1287,10 +1233,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/modals/send_poll_modal.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="17" />
+        <state relative-caret-position="558">
+          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/centrescripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <marker date="1497978767657" expanded="true" signature="5051:5058" ph="×" />
+            <marker date="1497978767657" expanded="true" signature="10087:10094" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/accountscripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="202" lean-forward="false" selection-start-line="11" selection-start-column="200" selection-end-line="11" selection-end-column="202" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/ajaxscripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
           <folding />
         </state>
       </provider>
