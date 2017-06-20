@@ -6,19 +6,19 @@
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        /*border-radius: 5px;*/
         box-sizing: border-box;
     }
 
     button[type=submit] {
         background-color: #428BCA;
         color: white;
-        padding: 10px 40px;
+        padding: 10px 66px;
         margin-top: 8px;
         border: none;
-        border-radius: 4px;
+        /*border-radius: 4px;*/
         cursor: pointer;
-        margin-left: 26px;
+        /*margin-left: 26px;*/
     }
 
     input[type=submit]:hover {
@@ -33,6 +33,8 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 200px;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .error {
@@ -41,28 +43,22 @@
         margin-bottom: 10px;
     }
 
+    body {
+        background-color: #EEEEEE;
+    }
 
 </style>
 <body>
 
-{#{% if is_granted('ROLE_USER') %}#}
-
-    {#{{ app.user.user }} {{ app.user.password }} {{ app.user.name }} {{ app.user.centre.getName() }}#}
-
-{#{% endif %}#}
-
 
 <form action="{{ path('login_check') }}" method="post">
     {% if error %}
-        <div class="error">{{ error.message }}</div>
+        <div class="error">{{ (error.message == 'Bad credentials.') ? 'Credenciales incorrectas.' : error.message }}</div>
     {% endif %}
-    <label for="username">Usuario:</label>
+
+    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Usuario" required/>
     <br/>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required/>
-    <br/>
-    <label for="password">Contraseña:</label>
-    <br/>
-    <input type="password" id="password" name="_password" required/>
+    <input type="password" id="password" name="_password" placeholder="Contraseña" required/>
 
     {#<input type="hidden" name="_target_path" value="/"/>#}
 

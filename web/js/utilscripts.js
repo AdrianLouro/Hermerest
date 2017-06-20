@@ -35,6 +35,21 @@ function checkAndSetPastDates(table) {
 }
 
 // MODALS
+function warningAlert(message){
+    $("#warning_modal .modal-body_content").text(message);
+    $("#warning_modal").fadeIn(100);
+}
+
+function confirmAlert(message){
+    $("#confirm_modal .modal-body_content").text(message);
+    $("#confirm_modal").fadeIn(100);
+}
+
 function closeModal() {
-    $(".modal").hide();
+    $(".modal").fadeOut(100);
+}
+
+function closeAlertModal() {
+    $("#confirmModalAcceptButton").off();
+    $("#warning_modal, #confirm_modal").fadeOut(100);
 }

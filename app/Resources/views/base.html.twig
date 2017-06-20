@@ -17,6 +17,8 @@
 <body>
 <div id="modalsDiv">
     {% block modals %}{% endblock %}
+    {% include 'modals/warning_modal.html.twig' %}
+    {% include 'modals/confirm_modal.html.twig' %}
 </div>
 
 <header>

@@ -19,6 +19,7 @@ function postCall(url, postData, callback) {
         url: encodeURI(generateUrl(url)),
         type: 'POST',
         data: postData,
+        async: false,
 
         success: function (response) {
             callback(response);

@@ -1,0 +1,20 @@
+<div class="modal" id="confirm_modal">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" onclick="closeAlertModal()">&times;</span>
+            <b class="modalTitle">Confirmación</b>
+        </div>
+        <div class="modal-body">
+            <div class="modal-body_content"></div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer_buttons">
+                {% block modal_footer %}{% endblock %}
+                <button id="confirmModalAcceptButton" class="warningButton" type="button">Aceptar</button>
+                <button id="confirmModalCancelButton" class="defaultButton" type="button" onclick="closeAlertModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</div>

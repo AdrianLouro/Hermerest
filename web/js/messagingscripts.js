@@ -4,7 +4,7 @@ function openSendCircularDialog() {
     $("#circularContentTextArea").val("");
     $("#attachFileInput").val(null);
     resetTreeview("#sendCircularModal");
-    $("#sendCircularModal").show();
+    $("#sendCircularModal").fadeIn(100);
 }
 
 function openViewCircularDialog(circularId) {
@@ -26,7 +26,7 @@ function openViewCircularDialogCallback(response) {
         response.content.attachmentName +
         "</a>");
 
-    $("#viewCircularModal").show();
+    $("#viewCircularModal").fadeIn(100);
 }
 
 function filterCirculars() {
@@ -43,9 +43,9 @@ function filterCirculars() {
 function sendCircular() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#circularSubjectInput").val().trim() === "") alert("El asunto de la circular no debe estar vacío");
-    else if ($("#sendCircularModal .recipientStudentLi input:checkbox:checked").length === 0) alert("Marque algún destinatario");
-    else if (file !== undefined && file.size > 10485760) alert("El archivo no debe superar los 10MB");
+    if ($("#circularSubjectInput").val().trim() === "") warningAlert("El asunto de la circular no debe estar vacío");
+    else if ($("#sendCircularModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
+    else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
     else {
         var studentsIds = [];
         $(".treeview .recipientStudentLi").each(function () {
@@ -99,7 +99,7 @@ function openSendAuthorizationDialog() {
     $("#authorizationContentTextArea").val("");
     $("#attachFileInput").val(null);
     resetTreeview("#sendAuthorizationModal");
-    $("#sendAuthorizationModal").show();
+    $("#sendAuthorizationModal").fadeIn(100);
 }
 
 function openViewAuthorizationDialog(authorizationId) {
@@ -134,16 +134,16 @@ function openViewAuthorizationDialogCallback(response) {
         )
     });
 
-    $("#viewAuthorizationModal").show();
+    $("#viewAuthorizationModal").fadeIn(100);
 }
 
 function sendAuthorization() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#authorizationSubjectInput").val().trim() === "" || $("#authorizationDateInput").val().trim() === "") alert("El asunto y la fecha límite de la autorización no deben estar vacíos");
-    else if (dateComparator(dateToString($("#authorizationDateInput").val()), getTodaysDate()) === -1) alert("La fecha límite es anterior a la actual");
-    else if (file !== undefined && file.size > 10485760) alert("El archivo no debe superar los 10MB");
-    else if ($("#sendAuthorizationModal .recipientStudentLi input:checkbox:checked").length === 0) alert("Marque algún destinatario");
+    if ($("#authorizationSubjectInput").val().trim() === "" || $("#authorizationDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite de la autorización no deben estar vacíos");
+    else if (dateComparator(dateToString($("#authorizationDateInput").val()), getTodaysDate()) === -1) warningAlert("La fecha límite es anterior a la actual");
+    else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
+    else if ($("#sendAuthorizationModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
     else {
         var studentsIds = [];
         $(".treeview .recipientStudentLi").each(function () {
@@ -216,7 +216,7 @@ function openSendPollDialog() {
     $("#addedPollOptionsList").empty();
     $("#attachFileInput").val(null);
     resetTreeview("#sendPollModal");
-    $("#sendPollModal").show();
+    $("#sendPollModal").fadeIn(100);
 }
 
 function openViewPollDialog(pollId) {
@@ -263,12 +263,12 @@ function openViewPollDialogCallback(response) {
         }
     });
 
-    $("#viewPollModal").show();
+    $("#viewPollModal").fadeIn(100);
 }
 
 function addPollOption() {
-    if ($("#newPollOptionInput").val().trim() === "") alert("La opción no debe estar vacía");
-    else if ($("#addedPollOptionsList li:contains('" + $("#newPollOptionInput").val() + "')").length > 0) alert("La opción ya ha sido añadida")
+    if ($("#newPollOptionInput").val().trim() === "") warningAlert("La opción no debe estar vacía");
+    else if ($("#addedPollOptionsList li:contains('" + $("#newPollOptionInput").val() + "')").length > 0) warningAlert("La opción ya ha sido añadida")
     else {
         $("#addedPollOptionsList").append("<li>" + $("#newPollOptionInput").val() + "<a  class='deleteCross' onclick='deletePollOption(this)'>&times;</a></li>");
     }
@@ -281,11 +281,11 @@ function deletePollOption(button) {
 function sendPoll() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#pollSubjectInput").val().trim() === "" || $("#pollDateInput").val().trim() === "") alert("El asunto y la fecha límite de la circular no deben estar vacíos");
-    else if (dateComparator(dateToString($("#pollDateInput").val()), getTodaysDate()) === -1) alert("La fecha límite es anterior a la actual");
-    else if (file !== undefined && file.size > 10485760) alert("El archivo no debe superar los 10MB");
-    else if ($("#sendPollModal .recipientStudentLi input:checkbox:checked").length === 0) alert("Marque algún destinatario");
-    else if ($("#addedPollOptionsList").children().length < 2) alert("Indique, al menos, 2 opciones para la encuesta");
+    if ($("#pollSubjectInput").val().trim() === "" || $("#pollDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite de la circular no deben estar vacíos");
+    else if (dateComparator(dateToString($("#pollDateInput").val()), getTodaysDate()) === -1) warningAlert("La fecha límite es anterior a la actual");
+    else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
+    else if ($("#sendPollModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
+    else if ($("#addedPollOptionsList").children().length < 2) warningAlert("Indique, al menos, 2 opciones para la encuesta");
     else {
         var studentsIds = [];
         $(".treeview .recipientStudentLi").each(function () {

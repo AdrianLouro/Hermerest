@@ -67,8 +67,7 @@ class PollsController extends Controller
      */
     public function getPollAction(Request $request, $id)
     {
-        $pollFacade = new PollFacade($this->getDoctrine()->getManager());
-        $poll = $pollFacade->find($id);
+        $poll = (new PollFacade($this->getDoctrine()->getManager()))->find($id);
         $pollAttachment = count($poll->getAttachments()) == 0 ? null : $poll->getAttachments()[0];
         return ResponseFactory::createJsonResponse(true, [
             'subject' => $poll->getSubject(),
@@ -100,6 +99,7 @@ class PollsController extends Controller
         $pollResults = array();
         foreach ($poll->getPollOptions() as $pollOption)
             array_push($pollResults, [$pollOption->getText(), count($pollOption->getReplies())]);
+
         return $pollResults;
     }
 }

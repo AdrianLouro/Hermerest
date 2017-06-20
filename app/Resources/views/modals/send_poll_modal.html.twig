@@ -23,12 +23,12 @@
     <div class="modal-body_right_panel">
         <div id="pollOptionsDiv">
             <b>Opciones</b>
-            <br/><br/>
-            Permitir respuesta múltiple: <input id="multipleChoiceCheckbox" type="checkbox"/>
-            <br/><br/><br/>
-            Nueva opción<br/>
-            <input class="modalInput" id="newPollOptionInput" type="text">
-            <br/><br/>
+            <div id="pollMultipleChoiceDiv">Permitir respuesta múltiple: <input id="multipleChoiceCheckbox" type="checkbox"/></div>
+            <div id="pollNewOptionsDiv">
+                Nueva opción<br/>
+                <input class="modalInput" id="newPollOptionInput" type="text">
+            </div>
+            <br/>
             <button class="primaryButton" id="addPollOptionButton" type="button" onclick="addPollOption()">Añadir opción</button>
             <ul id="addedPollOptionsList">
                 <li>Lunes<a class="deleteCross" onclick="deletePollOption(this)">&times;</a></li>

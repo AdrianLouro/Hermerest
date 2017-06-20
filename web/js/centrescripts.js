@@ -1,15 +1,24 @@
 // CLASSES
 function handleAutoimportFile(files) {
     if (files[0] === undefined) return;
-    if (!confirm("¿Está seguro que desea autoimportar los datos desde el fichero \"" + files[0].name + "\"?")) return;
 
-    var selectedFile = files[0];
-    var reader = new FileReader();
-    reader.onload = function (event) {
-        autoimportClasses(event.target.result);
-    };
-    reader.readAsText(selectedFile);
-    $("#files").val("");
+
+    $("#confirmModalAcceptButton").click(function () {
+        var selectedFile = files[0];
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            autoimportClasses(event.target.result);
+        };
+        reader.readAsText(selectedFile);
+        $("#files").val("");
+
+        closeAlertModal();
+    });
+
+    $("#confirmModalCancelButton").click(function () {$("#files").val("");});
+    $("#confirm_modal .close").click(function () {$("#files").val("");});
+
+    confirmAlert("¿Está seguro de que desea autoimportar los datos desde el fichero \"" + files[0].name + "\"?");
 }
 
 function autoimportClasses(data) {
@@ -66,12 +75,12 @@ function openNewClassDialog() {
     });
     $("#addedStudentsList").empty();
     hideNotMatchingStudentsFromStudentsDropdown();
-    $("#newClassModal").show();
+    $("#newClassModal").fadeIn(100);
 }
 
 function addNewClass(centreId) {
     var className = $("#classNameInput").val();
-    if (className.trim().length === 0) alert("Rellene todos los campos");
+    if (className.trim().length === 0) warningAlert("Rellene todos los campos");
     else {
         postCall("/classes",
             {"className": className, "centreId": centreId},
@@ -100,19 +109,19 @@ function addNewClassCallback(response) {
 // CLASS
 function openEditClassDialog() {
     $("#classNameInput").val($("#className").text());
-    $("#editClassModal").show();
+    $("#editClassModal").fadeIn(100);
 }
 
 function openAddStudentDialog() {
     $("#studentNameFilterInput").val("");
     hideNotMatchingStudentsFromStudentsDropdown();
     $("#addedStudentsList").empty();
-    $("#addStudentModal").show();
+    $("#addStudentModal").fadeIn(100);
 }
 
 function editClass(classId) {
     var className = $("#classNameInput").val();
-    if (className.trim().length === 0) alert("Rellene todos los campos");
+    if (className.trim().length === 0) warningAlert("Rellene todos los campos");
     else {
         patchCall("/classes/" + classId,
             {"className": className},
@@ -152,7 +161,7 @@ function addStudentToStudentsList() {
     var studentId = $("#studentsDropdown :selected").val();
     var studentFullname = $("#studentsDropdown :selected").text();
     if (studentId === '-1') {
-        alert("Seleccione un alumno");
+        warningAlert("Seleccione un alumno");
         return;
     }
 
@@ -174,7 +183,7 @@ function addStudentsToClass(classId, callback) {
 
 
     if (studentsIds.length === 0 && callback !== addStudentsToClassCallback) {
-        alert("Seleccione algún alumno");
+        warningAlert("Seleccione algún alumno");
         return;
     }
 
@@ -242,8 +251,11 @@ function hideNotMatchingStudentsFromStudentsDropdown() {
 }
 
 function deleteClass(classId) {
-    if (!confirm("¿Está seguro de que desea eliminar el curso?")) return;
-    deleteCall("/classes/" + classId, {}, deleteClassCallback);
+    $("#confirmModalAcceptButton").click(function () {
+        deleteCall("/classes/" + classId, {}, deleteClassCallback);
+        closeAlertModal();
+    });
+    confirmAlert("¿Está seguro de que desea eliminar el curso?");
 }
 
 function deleteClassCallback(response) {
@@ -264,7 +276,7 @@ function openRegisterStudentDialog() {
     $("#parentFullnameInput").val("");
     $("#registerStudentModal #parentFullnameInput").prop("disabled", true);
     $("#addedParentsList").empty();
-    $("#registerStudentModal").show();
+    $("#registerStudentModal").fadeIn(100);
 }
 
 function filterStudents() {
@@ -282,13 +294,13 @@ function filterStudents() {
 
 function addParentToParentsList() {
     if ($("#parentFullnameInput").is(':disabled')) {
-        alert("No se ha encontrado un padre con ese número de teléfono");
+        warningAlert("No se ha encontrado un padre con ese número de teléfono");
         return;
     }
 
     if ($("#addedParentsList #" + $("#parentTelephoneInput").val()).length > 0 ||
         $("#parentsTable td:first-child:contains('" + $("#parentTelephoneInput").val() + "')").length > 0) {
-        alert("El padre ya ha sido añadido");
+        warningAlert("El padre ya ha sido añadido");
         return;
     }
 
@@ -305,7 +317,7 @@ function registerStudent() {
     var studentClass = $("#classDropdown :selected").val();
 
     if (studentName.trim() === "" || studentSurname.trim() === "") {
-        alert("Rellene todos los campos");
+        warningAlert("Rellene todos los campos");
         return;
     }
 
@@ -374,7 +386,7 @@ function openEditStudentDialog() {
         // else $(this).prop('selected', false);
     });
 
-    $("#editStudentModal").show();
+    $("#editStudentModal").fadeIn(100);
 }
 
 function openAddParentDialog() {
@@ -382,7 +394,7 @@ function openAddParentDialog() {
     $("#parentFullnameInput").val("");
     $("#addParentModal #parentFullnameInput").prop("disabled", true);
     $("#addedParentsList").empty();
-    $("#addParentModal").show();
+    $("#addParentModal").fadeIn(100);
 }
 
 function editStudent(studentId) {
@@ -391,7 +403,7 @@ function editStudent(studentId) {
     var studentClass = $("#classDropdown :selected").val();
 
     if (studentName.trim() === "" || studentSurname.trim() === "") {
-        alert("Rellene todos los campos");
+        warningAlert("Rellene todos los campos");
         return;
     }
 
@@ -420,8 +432,11 @@ function editStudentCallback(response) {
 }
 
 function deleteStudent(studentId) {
-    if (!confirm("¿Está seguro de que desea eliminar al alumno?")) return;
-    deleteCall("/students/" + studentId, {}, deleteStudentCallback);
+    $("#confirmModalAcceptButton").click(function () {
+        deleteCall("/students/" + studentId, {}, deleteStudentCallback);
+        closeAlertModal();
+    });
+    confirmAlert("¿Está seguro de que desea eliminar al alumno?");
 }
 
 function deleteStudentCallback(response) {
@@ -463,8 +478,11 @@ function addParentsCallback(response) {
 }
 
 function deleteParent(studentId, parentId) {
-    if (!confirm("¿Está seguro de que desea eliminar al padre?")) return;
-    deleteCall("/students/" + studentId + "/parents/" + parentId, {}, deleteParentCallback);
+    $("#confirmModalAcceptButton").click(function () {
+        deleteCall("/students/" + studentId + "/parents/" + parentId, {}, deleteParentCallback);
+        closeAlertModal();
+    });
+    confirmAlert("¿Está seguro de que desea eliminar al padre?");
 }
 
 function deleteParentCallback(response) {
