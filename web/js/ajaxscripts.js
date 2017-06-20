@@ -2,7 +2,6 @@ function getCall(url, callback) {
     $.ajax({
         url: encodeURI(generateUrl(url)),
         type: 'GET',
-        async: false,
 
         success: function (response) {
             callback(response);
@@ -20,7 +19,6 @@ function postCall(url, postData, callback) {
         url: encodeURI(generateUrl(url)),
         type: 'POST',
         data: postData,
-        async: false,
 
         success: function (response) {
             callback(response);
@@ -38,7 +36,6 @@ function putCall(url, postData, callback) {
         url: encodeURI(generateUrl(url)),
         type: 'PUT',
         data: postData,
-        async: false,
 
         success: function (response) {
             callback(response);
@@ -56,7 +53,6 @@ function patchCall(url, postData, callback) {
         url: encodeURI(generateUrl(url)),
         type: 'PATCH',
         data: postData,
-        async: false,
 
         success: function (response) {
             callback(response);
@@ -74,7 +70,6 @@ function deleteCall(url, postData, callback) {
         url: encodeURI(generateUrl(url)),
         type: 'DELETE',
         data: postData,
-        async: false,
 
         success: function (response) {
             callback(response);
@@ -88,5 +83,6 @@ function deleteCall(url, postData, callback) {
 }
 
 function generateUrl(url) {
-    return "/Hermerest/web/app_dev.php" + url;
+    return "/Hermerest/web/app_dev.php" + url; // dev
+    // return "/Hermerest/web" + url; // prod
 }
