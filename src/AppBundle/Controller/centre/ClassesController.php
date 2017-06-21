@@ -94,10 +94,15 @@ class ClassesController extends Controller
     {
         foreach ($studentFields as $parentTelephone) {
             $parent = $parentFacade->findByTelephone($parentTelephone);
-            if ($parent == null) continue;
+            if ($parent == null || !$this->centreIsRelatedToParent($parent)) continue;
             $student->addParent($parent);
             $studentFacade->edit();
         }
+    }
+
+    private function centreIsRelatedToParent($parent)
+    {
+        return $this->get('security.token_storage')->getToken()->getUser()->getCentre()->getParents()->contains($parent);
     }
 
 }

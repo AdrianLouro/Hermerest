@@ -10,7 +10,7 @@ function openEditAccountDialog() {
 function editAccount(id) {
     if ($("#administratorUserInput").val().trim() === "" || $("#administratorNameInput").val().trim() === "") warningAlert("El nombre y el usuario no pueden estar vacíos");
     else if ($("#administratorNewPasswordInput").val().length > 0 && ($("#administratorNewPasswordInput").val().length < 4 || $("#administratorNewPasswordInput").val().length > 16 )) warningAlert("La contraseña debe tener entre 4 y 16 caracteres");
-    else if ($("#administratorNewPasswordInput").val() !== $("#administratorRepeatNewPasswordInput").val()) alert("Las contraseñas no coinciden");
+    else if ($("#administratorNewPasswordInput").val() !== $("#administratorRepeatNewPasswordInput").val()) warningAlert("Las contraseñas no coinciden");
     else if ($("#administratorCurrentPasswordInput").val().trim().length === 0) warningAlert("Inserte su contraseña actual");
     else {
         patchCall("/administrators/" + id,
@@ -27,7 +27,7 @@ function editAccount(id) {
 
 function editAccountCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 

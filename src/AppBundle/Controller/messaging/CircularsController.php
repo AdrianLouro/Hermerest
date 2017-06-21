@@ -30,7 +30,8 @@ class CircularsController extends Controller
     public function sendCircularAction(Request $request)
     {
         $circularFacade = new CircularFacade($this->getDoctrine()->getManager());
-        $sendingDate = new DateTime();date_timezone_set($sendingDate, timezone_open('Atlantic/Canary'));
+        $sendingDate = new DateTime();
+        date_timezone_set($sendingDate, timezone_open('Atlantic/Canary'));
 
         $circular = new Circular(
             $request->request->get('subject'),

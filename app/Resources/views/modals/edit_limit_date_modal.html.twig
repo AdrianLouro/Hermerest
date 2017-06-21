@@ -1,0 +1,16 @@
+{% extends 'modals/modal.html.twig' %}
+
+ {% block modal_header %}
+     Editar fecha límite
+ {% endblock %}
+
+{% block modal_body %}
+    Fecha límite<br/>
+    <input class="modalMessageInput" id="newLimitDateInput" type="date">
+    <br/><br/>
+{% endblock %}
+
+{% block modal_footer %}
+    <button id="editLimitDateButton" class="primaryButton" type="button">Guardar cambios</button>
+    <button class="defaultButton" type="button" onclick="closeModal()">Cancelar</button>
+{% endblock %}

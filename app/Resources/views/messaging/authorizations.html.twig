@@ -5,6 +5,7 @@
 {% block modals %}
     {{ include('/modals/send_authorization_modal.html.twig') }}
     {{ include('/modals/view_authorization_modal.html.twig') }}
+    {{ include('/modals/edit_limit_date_modal.html.twig') }}
 {% endblock %}
 
 {% block main_title %}
@@ -55,14 +56,14 @@
         </thead>
         <tbody>
         {% for authorization in app.user.getCentre().getMessagesOfType('Authorization') %}
-            <tr>
+            <tr id="{{ authorization.getId() }}">
                 <td>{{ authorization.getSubject() }}</td>
                 <td>{{ authorization.getSendingDate()|date('d/m/Y') }}</td>
                 {#<td>Armando Balmaseda</td>#}
                 <td>{{ authorization.getLimitDate()|date('d/m/Y') }}</td>
                 <td class="tableButton">
-                    <button class="infoButton" onclick="openViewAuthorizationDialog({{ authorization.getId() }})">Ver
-                    </button>
+                    <button class="infoButton" onclick="openViewAuthorizationDialog({{ authorization.getId() }})">Ver</button>
+                    <button class="warningButton" onclick="openEditLimitDateModal('authorizations',{{ authorization.getId() }},'{{ authorization.getLimitDate()|date('Y-m-d') }}')">Editar fecha límite</button>
                 </td>
             </tr>
         {% endfor %}
@@ -75,6 +76,7 @@
     <script>
         $(".modal").eq(0).attr("id", "sendAuthorizationModal");
         $(".modal").eq(1).attr("id", "viewAuthorizationModal");
+        $(".modal").eq(2).attr("id", "editLimitDateModal");
 
         checkAndSetPastDates("authorizationsTable");
     </script>

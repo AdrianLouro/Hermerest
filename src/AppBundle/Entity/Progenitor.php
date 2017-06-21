@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\AuthorizationReply;
+use AppBundle\Entity\Centre;
 use AppBundle\Entity\PollReply;
 use AppBundle\Entity\Student;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -38,6 +39,12 @@ class Progenitor
     private $children;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Centre", mappedBy="parents")
+     * * @ORM\OrderBy({"name" = "ASC"})
+     */
+    private $centres;
+
+    /**
      * @ORM\OneToMany(targetEntity="AuthorizationReply", mappedBy="parent")
      */
     private $authorizationReplies;
@@ -50,6 +57,7 @@ class Progenitor
     public function __construct($name = null, $telephone = null)
     {
         $this->children = new ArrayCollection();
+        $this->centres = new ArrayCollection();
         $this->authorizationReplies = new ArrayCollection();
         $this->pollReplies = new ArrayCollection();
         $this->name = $name;
@@ -229,6 +237,40 @@ class Progenitor
             $this->addChildMessagesToChildrenMessages($child->getMessagesOfType($type), $messages, $type);
 
         return $messages;
+    }
+
+    /**
+     * Add centre
+     *
+     * @param Centre $centre
+     *
+     * @return Progenitor
+     */
+    public function addCentre(Centre $centre)
+    {
+        $this->centres[] = $centre;
+
+        return $this;
+    }
+
+    /**
+     * Remove centre
+     *
+     * @param Centre $centre
+     */
+    public function removeCentre(Centre $centre)
+    {
+        $this->centres->removeElement($centre);
+    }
+
+    /**
+     * Get centres
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCentres()
+    {
+        return $this->centres;
     }
 
     private function addChildMessagesToChildrenMessages($childMessages, $childrenMessages, $type)

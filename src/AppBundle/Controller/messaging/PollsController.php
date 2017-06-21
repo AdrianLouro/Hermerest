@@ -62,6 +62,24 @@ class PollsController extends Controller
     }
 
     /**
+     * @Route("/polls/{id}", name="edit_poll_limit_date")
+     * @Method("PATCH")
+     */
+    public function editLimitDateAction(Request $request, $id)
+    {
+        $poll = (new PollFacade($this->getDoctrine()->getManager()))->find($id);
+        $poll->setLimitDate(
+            date_create_from_format('Y-m-d G:i:s', $request->request->get('limitDate') . " 23:59:59", new DateTimeZone('UTC'))
+        );
+        (new PollFacade($this->getDoctrine()->getManager()))->edit();
+
+        return ResponseFactory::createJsonResponse(true, [
+            'id' => $poll->getId(),
+            'limitDate' => $poll->getLimitDate(),
+        ]);
+    }
+
+    /**
      * @Route("/polls/{id}", name="get_poll")
      * @Method("GET")
      */

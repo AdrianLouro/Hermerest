@@ -53,7 +53,7 @@ function autoimportClass(className, students) {
 
 function autoimportClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -91,7 +91,7 @@ function addNewClass(centreId) {
 
 function addNewClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
     $("#classesTable").append(
@@ -132,7 +132,7 @@ function editClass(classId) {
 
 function editClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
     $("#className").text(response.content.name);
@@ -145,7 +145,7 @@ function deleteStudentFromClass(studentId, classId) {
 
 function deleteStudentFromClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -198,7 +198,7 @@ function addStudentsToClass(classId, callback) {
 
 function addStudentsToClassAndShowItCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -217,7 +217,7 @@ function addStudentsToClassAndShowItCallback(response) {
 
 function addStudentsToClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
     var numberOfStudentsOfCurrentClass = parseInt($("#classesTable tr").last().children().eq(1).text());
@@ -260,7 +260,7 @@ function deleteClass(classId) {
 
 function deleteClassCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -330,7 +330,7 @@ function registerStudent() {
 
 function registerStudentCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -362,7 +362,7 @@ $(".modal-body_content #parentTelephoneInput").on('input', function () {
 
 function searchParentByTelephoneCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -420,7 +420,7 @@ function editStudent(studentId) {
 
 function editStudentCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -441,7 +441,7 @@ function deleteStudent(studentId) {
 
 function deleteStudentCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -462,7 +462,7 @@ function addParents(studentId) {
 
 function addParentsCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -487,7 +487,7 @@ function deleteParent(studentId, parentId) {
 
 function deleteParentCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 

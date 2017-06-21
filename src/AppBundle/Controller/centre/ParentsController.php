@@ -18,13 +18,19 @@ class ParentsController extends Controller
     public function findParentAction(Request $request)
     {
         $parent = (new ProgenitorFacade($this->getDoctrine()->getManager()))->findByTelephone($request->query->get('telephone'));
-        return ResponseFactory::createJsonResponse(true, $parent == null ?
-            ['found' => false] :
-            ['found' => true,
-                'id' => $parent->getId(),
-                'telephone' => $parent->getTelephone(),
-                'fullname' => $parent->getName(),
-            ]
+        return ResponseFactory::createJsonResponse(true,
+            $parent == null || !$this->centreIsRelatedToParent($parent) ?
+                ['found' => false] :
+                ['found' => true,
+                    'id' => $parent->getId(),
+                    'telephone' => $parent->getTelephone(),
+                    'fullname' => $parent->getName(),
+                ]
         );
+    }
+
+    private function centreIsRelatedToParent($parent)
+    {
+        return $this->get('security.token_storage')->getToken()->getUser()->getCentre()->getParents()->contains($parent);
     }
 }

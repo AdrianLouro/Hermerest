@@ -59,6 +59,24 @@ class AuthorizationsController extends Controller
     }
 
     /**
+     * @Route("/authorizations/{id}", name="edit_authorization_limit_date")
+     * @Method("PATCH")
+     */
+    public function editLimitDateAction(Request $request, $id)
+    {
+        $authorization = (new AuthorizationFacade($this->getDoctrine()->getManager()))->find($id);
+        $authorization->setLimitDate(
+            date_create_from_format('Y-m-d G:i:s', $request->request->get('limitDate') . " 23:59:59", new DateTimeZone('UTC'))
+        );
+        (new AuthorizationFacade($this->getDoctrine()->getManager()))->edit();
+
+        return ResponseFactory::createJsonResponse(true, [
+            'id' => $authorization->getId(),
+            'limitDate' => $authorization->getLimitDate(),
+        ]);
+    }
+
+    /**
      * @Route("/authorizations/{id}", name="get_authorization")
      * @Method("GET")
      */

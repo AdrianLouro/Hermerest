@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\Course;
 use AppBundle\Entity\Message;
+use AppBundle\Entity\Progenitor;
 use AppBundle\Entity\Student;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -39,6 +40,16 @@ class Centre
     private $students;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Progenitor", inversedBy="centres")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="centre_parent",
+     *      joinColumns={@ORM\JoinColumn(name="centre", referencedColumnName="id", onDelete="cascade")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="parent", referencedColumnName="id", onDelete="cascade")}
+     *      )
+     */
+    private $parents;
+
+    /**
      * @ORM\OneToMany(targetEntity="Message", mappedBy="centre")
      * @ORM\OrderBy({"sendingDate" = "DESC"})
      */
@@ -48,6 +59,7 @@ class Centre
     {
         $this->classes = new ArrayCollection();
         $this->students = new ArrayCollection();
+        $this->parents = new ArrayCollection();
         $this->messages = new ArrayCollection();
         $this->name = $name;
     }
@@ -214,4 +226,37 @@ class Centre
         return $messages;
     }
 
+    /**
+     * Add parent
+     *
+     * @param Progenitor $parent
+     *
+     * @return Centre
+     */
+    public function addParent(Progenitor $parent)
+    {
+        $this->parents[] = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Remove parent
+     *
+     * @param Progenitor $parent
+     */
+    public function removeParent(Progenitor $parent)
+    {
+        $this->parents->removeElement($parent);
+    }
+
+    /**
+     * Get parents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParents()
+    {
+        return $this->parents;
+    }
 }

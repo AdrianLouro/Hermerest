@@ -31,12 +31,12 @@
     border: solid #DDDDDD 1px;
 }
 
-#warning_modal .modal-header, #confirm_modal .modal-header{
+#warning_modal .modal-header, #confirm_modal .modal-header {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-#warning_modal .close, #confirm_modal .close{
+#warning_modal .close, #confirm_modal .close {
     margin-top: -10px;
 }
 
@@ -192,3 +192,8 @@
     padding-bottom: 4px;
 }
 
+/* editLimitDateModal */
+#newLimitDateInput {
+    width: 199px;
+    padding: 5px;
+}

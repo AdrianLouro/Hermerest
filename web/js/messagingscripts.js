@@ -14,7 +14,7 @@ function openViewCircularDialog(circularId) {
 
 function openViewCircularDialogCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -43,7 +43,7 @@ function filterCirculars() {
 function sendCircular() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#circularSubjectInput").val().trim() === "") warningAlert("El asunto de la circular no debe estar vacío");
+    if ($("#circularSubjectInput").val().trim() === "") warningAlert("El asunto no debe estar vacío");
     else if ($("#sendCircularModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
     else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
     else {
@@ -78,7 +78,7 @@ function sendCircularPost(studentsIds, fileName, fileContent) {
 
 function sendCircularCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -110,7 +110,7 @@ function openViewAuthorizationDialog(authorizationId) {
 
 function openViewAuthorizationDialogCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -140,7 +140,7 @@ function openViewAuthorizationDialogCallback(response) {
 function sendAuthorization() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#authorizationSubjectInput").val().trim() === "" || $("#authorizationDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite de la autorización no deben estar vacíos");
+    if ($("#authorizationSubjectInput").val().trim() === "" || $("#authorizationDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite no deben estar vacíos");
     else if (dateComparator(dateToString($("#authorizationDateInput").val()), getTodaysDate()) === -1) warningAlert("La fecha límite es anterior a la actual");
     else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
     else if ($("#sendAuthorizationModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
@@ -176,16 +176,19 @@ function sendAuthorizationPost(studentsIds, fileName, fileContent) {
 
 function sendAuthorizationCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
     $("#authorizationsTable tbody").prepend(
-        "<tr>" +
+        "<tr id='" + response.content.id + "'>" +
         "<td>" + response.content.subject + "</td>" +
         "<td>" + getTodaysDate() + "</td>" +
         "<td>" + dateToString(response.content.limitDate.date) + "</td>" +
-        "<td class='tableButton'><button class='infoButton' onclick='openViewAuthorizationDialog(" + response.content.id + ")'>Ver</button></td>" +
+        "<td class='tableButton'>" +
+        "<button class='infoButton' onclick='openViewAuthorizationDialog(" + response.content.id + ")'>Ver</button>" + "\n" +
+        '<button class="warningButton" onclick=\'openEditLimitDateModal(' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
+        "</td>" +
         "</tr>"
     );
     closeModal();
@@ -226,7 +229,7 @@ function openViewPollDialog(pollId) {
 
 function openViewPollDialogCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
@@ -281,7 +284,7 @@ function deletePollOption(button) {
 function sendPoll() {
     var file = document.getElementById('attachFileInput').files[0];
 
-    if ($("#pollSubjectInput").val().trim() === "" || $("#pollDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite de la circular no deben estar vacíos");
+    if ($("#pollSubjectInput").val().trim() === "" || $("#pollDateInput").val().trim() === "") warningAlert("El asunto y la fecha límite no deben estar vacíos");
     else if (dateComparator(dateToString($("#pollDateInput").val()), getTodaysDate()) === -1) warningAlert("La fecha límite es anterior a la actual");
     else if (file !== undefined && file.size > 10485760) warningAlert("El archivo no debe superar los 10MB");
     else if ($("#sendPollModal .recipientStudentLi input:checkbox:checked").length === 0) warningAlert("Marque algún destinatario");
@@ -322,16 +325,19 @@ function sendPollPost(studentsIds, fileName, fileContent) {
 
 function sendPollCallback(response) {
     if (!response.success) {
-        alert(response.error);
+        warningAlert(response.error);
         return;
     }
 
     $("#pollsTable tbody").prepend(
-        "<tr>" +
+        "<tr id='" + response.content.id + "'>" +
         "<td>" + response.content.subject + "</td>" +
         "<td>" + getTodaysDate() + "</td>" +
         "<td>" + dateToString(response.content.limitDate.date) + "</td>" +
-        "<td class='tableButton'><button class='infoButton' onclick='openViewPollDialog(" + response.content.id + ")'>Ver</button></td>" +
+        "<td class='tableButton'>" +
+        "<button class='infoButton' onclick='openViewPollDialog(" + response.content.id + ")'>Ver</button>" + "\n" +
+        '<button class="warningButton" onclick=\'openEditLimitDateModal(' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
+        "</td>" +
         "</tr>"
     );
     closeModal();
@@ -350,4 +356,34 @@ function filterPolls() {
             (rowPollState === pollState || pollState === 0)) $(this).show();
         else $(this).hide();
     });
+}
+
+/* edit limit dates */
+function openEditLimitDateModal(messageType, id, currentLimitDate) {
+    $("#newLimitDateInput").val(currentLimitDate);
+    $("#editLimitDateButton").off();
+    $("#editLimitDateButton").click(function () {
+        editLimitDate(id, messageType);
+    });
+    $("#editLimitDateModal").fadeIn(100);
+}
+
+function editLimitDate(id, messageType) {
+    if ($("#newLimitDateInput").val().trim() === "") warningAlert("La fecha límite no debe estar vacía");
+    else if (dateComparator(dateToString($("#newLimitDateInput").val()), getTodaysDate()) === -1) warningAlert("La fecha límite es anterior a la actual");
+    else {
+        patchCall("/" + messageType + "/" + id, {"limitDate": $("#newLimitDateInput").val()}, editLimitDateCallback);
+    }
+}
+
+function editLimitDateCallback(response) {
+    if (!response.success) {
+        warningAlert(response.error);
+        return;
+    }
+
+    $("table > tbody >  tr#" + response.content.id).children().eq(2).text(dateToString(response.content.limitDate.date));
+    $("table > tbody >  tr#" + response.content.id).children().eq(2).removeClass('pastDate');
+
+    closeModal();
 }

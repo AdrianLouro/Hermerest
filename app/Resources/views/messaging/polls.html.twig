@@ -5,6 +5,7 @@
 {% block modals %}
     {{ include('/modals/send_poll_modal.html.twig') }}
     {{ include('/modals/view_poll_modal.html.twig') }}
+    {{ include('/modals/edit_limit_date_modal.html.twig') }}
 {% endblock %}
 
 {% block main_title %}
@@ -54,13 +55,14 @@
         </thead>
         <tbody>
         {% for poll in app.user.getCentre().getMessagesOfType('Poll') %}
-        <tr>
+        <tr id="{{ poll.getId() }}">
             <td>{{ poll.getSubject() }}</td>
             <td>{{ poll.getSendingDate()|date('d/m/Y') }}</td>
             {#<td>Armando Balmaseda</td>#}
             <td>{{ poll.getLimitDate()|date('d/m/Y') }}</td>
             <td class="tableButton">
                 <button class="infoButton" onclick="openViewPollDialog({{ poll.getId() }})">Ver</button>
+                <button class="warningButton" onclick="openEditLimitDateModal('polls',{{ poll.getId() }},'{{ poll.getLimitDate()|date('Y-m-d') }}')">Editar fecha límite</button>
             </td>
         </tr>
         {% endfor %}
@@ -73,6 +75,7 @@
     <script>
         $(".modal").eq(0).attr("id", "sendPollModal");
         $(".modal").eq(1).attr("id", "viewPollModal");
+        $(".modal").eq(2).attr("id", "editLimitDateModal");
 
         checkAndSetPastDates("pollsTable");
     </script>
