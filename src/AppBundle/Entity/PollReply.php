@@ -15,19 +15,26 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="pollReply")
+ * @ORM\Table(name="pollReply", uniqueConstraints={
+ * @ORM\UniqueConstraint(columns={"parent", "pollOption"})
+ * })
  */
 class PollReply
 {
     /**
+     * @ORM\Column(type="integer", name="id")
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="PollOption", inversedBy="replies")
      * @ORM\JoinColumn(name="pollOption", referencedColumnName="id", onDelete="cascade")
      */
     private $pollOption;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Progenitor", inversedBy="pollReplies")
      * @ORM\JoinColumn(name="parent", referencedColumnName="id", onDelete="cascade")
      */
@@ -37,6 +44,16 @@ class PollReply
     {
         $this->pollOption = $pollOption;
         $this->parent = $parent;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**

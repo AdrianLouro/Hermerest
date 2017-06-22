@@ -15,26 +15,32 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="authorizationReply")
+ * @ORM\Table(name="authorizationReply", uniqueConstraints={
+ * @ORM\UniqueConstraint(columns={"parent", "authorization", "student"})
+ * })
  */
 class AuthorizationReply
 {
     /**
+     * @ORM\Column(type="integer", name="id")
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Authorization", inversedBy="replies")
      * @ORM\JoinColumn(name="authorization", referencedColumnName="id", onDelete="cascade")
      */
     private $authorization;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Progenitor", inversedBy="authorizationReplies")
      * @ORM\JoinColumn(name="parent", referencedColumnName="id", onDelete="cascade")
      */
     private $parent;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Student", inversedBy="authorizationReplies")
      * @ORM\JoinColumn(name="student", referencedColumnName="id", onDelete="cascade")
      */
@@ -51,6 +57,16 @@ class AuthorizationReply
         $this->parent = $parent;
         $this->student = $student;
         $this->authorized = $authorized;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**

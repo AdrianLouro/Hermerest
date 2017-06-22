@@ -225,18 +225,18 @@ class Progenitor
     }
 
     /**
-     * Get messages by type
+     * Get authorizationReply
      *
-     * @param $type
-     * @return \Doctrine\Common\Collections\Collection
+     * @return AuthorizationReply
      */
-    public function getMessagesOfType($type)
+    public function getAuthorizationReply(Student $student, Authorization $authorization)
     {
-        $messages = new ArrayCollection();
-        foreach ($this->children as $child)
-            $this->addChildMessagesToChildrenMessages($child->getMessagesOfType($type), $messages, $type);
+        foreach ($this->authorizationReplies as $authorizationReply)
+            if ($authorizationReply->getStudent()->getId() == $student->getId() &&
+                $authorizationReply->getAuthorization()->getId() == $authorization->getId())
+                    return $authorizationReply;
 
-        return $messages;
+        return null;
     }
 
     /**
@@ -273,11 +273,29 @@ class Progenitor
         return $this->centres;
     }
 
-    private function addChildMessagesToChildrenMessages($childMessages, $childrenMessages, $type)
+    /**
+     * Get messages by type
+     *
+     * @param $type
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessagesOfType($type)
+    {
+        $messages = new ArrayCollection();
+        foreach ($this->children as $child)
+            $this->addChildMessagesToChildrenMessages($child->getMessagesOfType($type), $messages, $type, $child);
+
+        return $messages;
+    }
+
+    private function addChildMessagesToChildrenMessages($childMessages, $childrenMessages, $type, $child)
     {
         foreach ($childMessages as $childMessage) {
             if ($type != "Authorization" && $childrenMessages->contains($childMessage)) continue;
-            $childrenMessages->add($childMessage);
+            $childrenMessages->add($type == "Authorization" ?
+                ['message' => $childMessage, 'child' => $child] :
+                $childMessage
+            );
         }
     }
 }
