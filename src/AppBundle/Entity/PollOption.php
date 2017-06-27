@@ -140,4 +140,12 @@ class PollOption
     {
         return $this->replies;
     }
+
+    public function isRepliedBy(Progenitor $parent)
+    {
+        foreach ($this->getReplies() as $pollReply)
+            if ($pollReply->getParent() == $parent) return true;
+
+        return false;
+    }
 }

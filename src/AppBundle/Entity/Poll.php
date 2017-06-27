@@ -124,4 +124,12 @@ class Poll extends Message
     {
         return $this->pollOptions;
     }
+
+    public function isRepliedBy(Progenitor $parent)
+    {
+        foreach ($this->getPollOptions() as $pollOption)
+            if ($pollOption->isRepliedBy($parent)) return true;
+
+        return false;
+    }
 }
