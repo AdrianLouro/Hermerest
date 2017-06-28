@@ -43,4 +43,9 @@ abstract class AbstractFacade
     {
         return $this->entityManager->getRepository($this->entityName)->find($id);
     }
+
+    public function findAll()
+    {
+        return $this->entityManager->getRepository($this->entityName)->findAll();
+    }
 }
