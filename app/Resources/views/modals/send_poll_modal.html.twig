@@ -6,10 +6,10 @@
 
 {% block modal_body %}
     <div class="modal-body_left_panel">
-        Asunto<br/>
+        Asunto<span style="color:red;">*</span><br/>
         <input class="modalMessageInput" id="pollSubjectInput" type="text">
         <br/><br/>
-        Fecha límite<br/>
+        Fecha límite<span style="color:red;">*</span><br/>
         <input class="modalMessageInput" id="pollDateInput" type="date">
         <br/><br/>
         <div class="attachFileDiv">
@@ -25,7 +25,7 @@
             <b>Opciones</b>
             <div id="pollMultipleChoiceDiv">Permitir respuesta múltiple: <input id="multipleChoiceCheckbox" type="checkbox"/></div>
             <div id="pollNewOptionsDiv">
-                Nueva opción<br/>
+                Nueva opción<span style="color:red;">*</span><br/>
                 <input class="modalInput" id="newPollOptionInput" type="text">
             </div>
             <br/>

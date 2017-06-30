@@ -5,10 +5,10 @@
  {% endblock %}
 
 {% block modal_body %}
-    Nombre<br/>
+    Nombre<span style="color:red;">*</span><br/>
     <input class="modalInput" id="studentNameInput" type="text" value="{{ student.getName() }}">
     <br/><br/>
-    Apellidos<br/>
+    Apellidos<span style="color:red;">*</span><br/>
     <input class="modalInput" id="studentSurnameInput" type="text" value="{{ student.getSurname() }}">
     <br/><br/>
     Curso<br/>
