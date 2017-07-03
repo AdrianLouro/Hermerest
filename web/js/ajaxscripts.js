@@ -83,6 +83,6 @@ function deleteCall(url, postData, callback) {
 }
 
 function generateUrl(url) {
-    return "/Hermerest/web/app_dev.php" + url; // dev
-    // return "/Hermerest/web" + url; // prod
+    // return "/Hermerest/web/app_dev.php" + url; // dev
+    return "/Hermerest/web" + url; // prod
 }
