@@ -8,7 +8,7 @@ function getCall(url, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            alert("Error al realizar la petición");
+            warningAlert("Hubo un error al realizar la petición.");
         }
 
     });
@@ -25,7 +25,7 @@ function postCall(url, postData, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            alert("Error al realizar la petición");
+            warningAlert("Hubo un error al realizar la petición.");
         }
 
     });
@@ -42,7 +42,7 @@ function putCall(url, postData, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            alert("Error al realizar la petición");
+            warningAlert("Hubo un error al realizar la petición.");
         }
 
     });
@@ -59,7 +59,7 @@ function patchCall(url, postData, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            alert("Error al realizar la petición");
+            warningAlert("Hubo un error al realizar la petición.");
         }
 
     });
@@ -76,7 +76,7 @@ function deleteCall(url, postData, callback) {
         },
 
         error: function (response, textStatus, errorThrown) {
-            alert("Error al realizar la petición");
+            warningAlert("Hubo un error al realizar la petición.");
         }
 
     });
