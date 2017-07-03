@@ -1,0 +1,34 @@
+api_progenitors:
+    type: rest
+    resource: "@AppBundle/Controller/api/ProgenitorsController.php"
+    name_prefix:  api_progenitors_
+
+api_circulars:
+    type: rest
+    resource: "@AppBundle/Controller/api/CircularsController.php"
+    name_prefix:  api_circulars_
+
+api_polls:
+    type: rest
+    resource: "@AppBundle/Controller/api/PollsController.php"
+    name_prefix:  api_polls_
+
+api_authorizations:
+    type: rest
+    resource: "@AppBundle/Controller/api/AuthorizationsController.php"
+    name_prefix:  api_authorizations_
+
+api_authorizationreplies:
+    type: rest
+    resource: "@AppBundle/Controller/api/AuthorizationRepliesController.php"
+    name_prefix:  api_authorizationreplies_
+
+api_pollreplies:
+    type: rest
+    resource: "@AppBundle/Controller/api/PollRepliesController.php"
+    name_prefix:  api_pollreplies_
+
+api_centres:
+    type: rest
+    resource: "@AppBundle/Controller/api/CentresController.php"
+    name_prefix:  api_centres_
