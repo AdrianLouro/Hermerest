@@ -25,6 +25,9 @@ header {
     background-color: #F5F5F5;
     overflow: auto;
     border-bottom: 1px solid #EEEEEE;
+    padding-left: 160px;
+    position: relative;
+    z-index: 1;
 }
 
 header #headerLoginDiv {
@@ -59,9 +62,10 @@ header #logout:hover {
     height: 100%;
     overflow: auto;
     border-right: 1px solid #EEEEEE;
-    padding-top: 13px;
-    /*padding-top: 71px;*/
-    /*margin-top: -58px;*/
+    /*padding-top: 13px;*/
+    padding-top: 65px;
+    margin-top: -52px;
+    /*z-index: -1;*/
 }
 
 .navbar_category {
@@ -98,7 +102,7 @@ header #logout:hover {
 #actionPanel {
     background-color: #F5F5F5;
     border-bottom: 1px solid #EEEEEE;
-    /*border-left: 1px solid #EEEEEE;*/
+    border-left: 1px solid #EEEEEE;
     min-height: 30px;
     padding: 10px;
     margin-left: 160px;
