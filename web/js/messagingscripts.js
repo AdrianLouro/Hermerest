@@ -187,7 +187,7 @@ function sendAuthorizationCallback(response) {
         "<td>" + dateToString(response.content.limitDate.date) + "</td>" +
         "<td class='tableButton'>" +
         "<button class='infoButton' onclick='openViewAuthorizationDialog(" + response.content.id + ")'>Ver</button>" + "\n" +
-        '<button class="warningButton" onclick=\'openEditLimitDateModal(' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
+        '<button class="warningButton" onclick=\'openEditLimitDateModal("authorizations",' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
         "</td>" +
         "</tr>"
     );
@@ -336,7 +336,7 @@ function sendPollCallback(response) {
         "<td>" + dateToString(response.content.limitDate.date) + "</td>" +
         "<td class='tableButton'>" +
         "<button class='infoButton' onclick='openViewPollDialog(" + response.content.id + ")'>Ver</button>" + "\n" +
-        '<button class="warningButton" onclick=\'openEditLimitDateModal(' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
+        '<button class="warningButton" onclick=\'openEditLimitDateModal("polls",' + response.content.id + ',\"' + response.content.limitDate.date.substring(0, 10) + '\")\'>Editar fecha límite</button>' +
         "</td>" +
         "</tr>"
     );
